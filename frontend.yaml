@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mytest-dp
-  name: mytest-dp
+    app: frontend
+  name: frontend
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
-      app: mytest-dp
+      app: frontend
   template:
     metadata:
       labels:
-        app: mytest-dp
+        app: frontend
     spec:
       containers:
         - image: httpd:alpine3.18
           name: httpd
   strategy:
     type: RollingUpdate
-    rollingUpdate: 
-    maxUnavailable: 1
-    maxSurge: 1
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
