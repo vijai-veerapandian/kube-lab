@@ -4,7 +4,6 @@ metadata:
   labels:
     app: mealie
   name: mealie
-  namespace: mealie
 spec:
   replicas: 2
   selector:
